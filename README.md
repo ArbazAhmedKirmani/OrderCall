@@ -20,7 +20,7 @@ In this Base Project we're using `antd` UI Library
 
 
 ### Features
-- A Custom Basic Calculator is attached on Dashboard Screen.
+- A Custom Basic Calculator is attached on Dashboard Screen with Event Listeners for Supporting Keyboard.
 - User can render a `CRUD` page using a single JSX Element.
 - Basic Login Authentication is also embedded
 
