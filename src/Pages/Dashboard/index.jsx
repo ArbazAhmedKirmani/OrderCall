@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Btn from "../../Components/BasicComponents/Btn";
 import {
   bracketCounter,
@@ -13,6 +13,7 @@ const Dashboard = () => {
   const [result, setResult] = useState("");
 
   const operator = ["+", "-", "/", "*"];
+  const key = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   /**
    * Set the value of input field on buttons click
@@ -24,6 +25,17 @@ const Dashboard = () => {
       setResult(result);
     /* fetch final string */ else setResult(OperatorFunction(name, result));
   };
+
+  window.addEventListener(
+    "keydown",
+    (e) => key.includes(e.key) && handleClick({ target: { name: e.key } })
+  );
+
+  useEffect(() => {
+    return () => {
+      window.removeEventListener("keydown", console.log("EVENT REMOVES"), true);
+    };
+  }, []);
 
   /**
    * Clear the input screen
