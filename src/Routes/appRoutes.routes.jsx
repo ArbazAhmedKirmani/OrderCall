@@ -4,7 +4,6 @@ import MainLayout from "../Layout";
 import Login from "../Pages/Authentication/Login";
 import Dashboard from "../Pages/Dashboard";
 import NotFound404 from "../Pages/Errors/NotFound404";
-import Screen from "../Pages/PointOfSale/Screen";
 import Roles from "../Pages/Setups/Roles";
 import Users from "../Pages/Setups/Users";
 
@@ -37,7 +36,6 @@ const AppRoutes = () => {
           <Route path="roles" element={<Roles />} />
         </Route>
       </Route>
-      <Route path="/pos" element={<Screen />} />
       <Route path="*" element={<NotFound404 />} />
     </Routes>
   );

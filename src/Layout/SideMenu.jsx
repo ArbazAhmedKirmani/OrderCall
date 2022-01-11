@@ -1,11 +1,6 @@
 import React from "react";
 import { Menu } from "antd";
-import {
-  ToolOutlined,
-  LaptopOutlined,
-  AppstoreFilled,
-  SettingOutlined,
-} from "@ant-design/icons";
+import { ToolOutlined, AppstoreFilled } from "@ant-design/icons";
 // import { Link } from "react-router-dom";
 import SubMenu from "antd/lib/menu/SubMenu";
 import Sider from "antd/lib/layout/Sider";
@@ -17,9 +12,6 @@ const SideMenu = ({ collapsed }) => {
       <Menu defaultSelectedKeys={["1"]} mode="inline" theme="dark">
         <Menu.Item key="1" icon={<AppstoreFilled />}>
           <NavLink to="/dashboard">Dashboard</NavLink>
-        </Menu.Item>
-        <Menu.Item key="2" icon={<LaptopOutlined />}>
-          <NavLink to="/pos">P O S</NavLink>
         </Menu.Item>
         <SubMenu key="sub1" icon={<ToolOutlined />} title="Setups">
           <Menu.Item key="3">

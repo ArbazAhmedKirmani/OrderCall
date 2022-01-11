@@ -15,16 +15,6 @@ const Dashboard = () => {
   const operator = ["+", "-", "/", "*"];
   const key = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-  useEffect(() => {
-    window.addEventListener(
-      "keydown",
-      (e) => key.includes(e.key) && handleClick({ target: { name: e.key } })
-    );
-    return () => {
-      window.removeEventListener("keydown");
-    };
-  }, []);
-
   /**
    * Set the value of input field on buttons click
    * @param {string} param0
@@ -35,6 +25,17 @@ const Dashboard = () => {
       setResult(result);
     /* fetch final string */ else setResult(OperatorFunction(name, result));
   };
+
+  window.addEventListener(
+    "keydown",
+    (e) => key.includes(e.key) && handleClick({ target: { name: e.key } })
+  );
+
+  useEffect(() => {
+    return () => {
+      window.removeEventListener("keydown", console.log("EVENT REMOVES"), true);
+    };
+  }, []);
 
   /**
    * Clear the input screen

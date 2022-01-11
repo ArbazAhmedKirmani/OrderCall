@@ -1,6 +1,25 @@
 const operator = ["+", "-", "/", "*"];
 
 /**
+ * Count the Open and Closed brackets in the equation
+ * @param {string} result Equation String
+ * @returns {number} Return number shows the amount of brackets Opened/Closed
+ */
+export const bracketCounter = (result) => {
+  let num = 0;
+  let array = result.split("");
+
+  /* Checking Condition for '(' and ')' */
+  array.forEach((arr) => {
+    if (arr === "(") {
+      num++;
+    } else if (arr === ")") num--;
+  });
+
+  return num;
+};
+
+/**
  * switch case for handling brackets and produce final string
  * @param {string} data Key press value
  * @param {string} result Latest final result string
@@ -54,23 +73,4 @@ export const OperatorFunction = (data, result) => {
         return result.toString() + data.toString();
       }
   }
-};
-
-/**
- * Count the Open and Closed brackets in the equation
- * @param {string} result Equation String
- * @returns {number} Return number shows the amount of brackets Opened/Closed
- */
-export const bracketCounter = (result) => {
-  let num = 0;
-  let array = result.split("");
-
-  /* Checking Condition for '(' and ')' */
-  array.forEach((arr) => {
-    if (arr === "(") {
-      num++;
-    } else if (arr === ")") num--;
-  });
-
-  return num;
 };
